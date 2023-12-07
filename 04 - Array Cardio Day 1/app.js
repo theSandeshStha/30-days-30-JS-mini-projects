@@ -66,6 +66,18 @@ console.table(
 
 // =================================================================
 
+// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+// open this link and use this code in its console
+
+// const category = document.querySelector(".mw-category");
+// const links = [...category.querySelectorAll("a")];
+// const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'))
+// console.log(de)
+
+// =================================================================
+
 const people = [
   "Bernhard, Sandra",
   "Bethea, Erin",
@@ -110,18 +122,14 @@ const people = [
   "Biondo, Frank",
 ];
 
-// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
-// open this link and use this code in its console
-
-// const category = document.querySelector(".mw-category");
-// const links = [...category.querySelectorAll("a")];
-// const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'))
-// console.log(de)
-
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+
+console.table(
+  people.sort((nameOne, nameTwo) =>
+    nameOne.split(",")[1] > nameTwo.split(",")[1] ? 1 : -1
+  )
+);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
