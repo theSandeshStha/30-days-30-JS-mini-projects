@@ -33,12 +33,36 @@ function getFullName(item) {
 }
 
 // Array.prototype.sort()
+// .sort() overwrites the original array
 // 3. Sort the inventors by birthdate, oldest to youngest
+inventors.sort((a, b) => (a.year < b.year ? -1 : b.year < a.year ? 1 : 0));
+console.table(inventors);
+
+//inventors.sort((a, b) => (a.year < b.year ? 1 : b.year < a.year ? -1 : 0));
+//This would sort in descending order
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
 
+console.log(inventors.reduce(theSum, 0));
+function theSum(total, inventors) {
+  age = inventors.passed - inventors.year;
+  return total + age;
+}
+// Another way, just reducing the lines with lambda expression
+console.log(
+  inventors.reduce((atotal, inventors) => {
+    return atotal + inventors.passed - inventors.year;
+  }, 0)
+);
+
 // 5. Sort the inventors by years lived
+
+console.table(
+  inventors.sort((a, b) => {
+    return a.passed - a.year > b.passed - b.year ? -1 : 1;
+  })
+);
 
 // =================================================================
 
@@ -88,6 +112,13 @@ const people = [
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+// open this link and use this code in its console
+
+// const category = document.querySelector(".mw-category");
+// const links = [...category.querySelectorAll("a")];
+// const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'))
+// console.log(de)
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
