@@ -131,9 +131,6 @@ console.table(
   )
 );
 
-// 8. Reduce Exercise
-// Sum up the instances of each of these
-
 const data = [
   "car",
   "car",
@@ -150,3 +147,18 @@ const data = [
   "car",
   "truck",
 ];
+
+// 8. Reduce Exercise
+// Sum up the instances of each of these
+
+const counter = {};
+
+data.forEach((ele) => {
+  if (counter[ele]) {
+    counter[ele] += 1;
+  } else {
+    counter[ele] = 1;
+  }
+});
+
+console.table(counter);
